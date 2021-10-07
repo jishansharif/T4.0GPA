@@ -1,0 +1,11 @@
+body {
+    background-color: beige;        /* Sets page background color */
+}
+
+fieldset {
+    width: 200px;       /* Sets the width of the search fieldset */
+}
+
+form {
+    width: 150px;       /* Sets the width of the search bar */
+}
