@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>ShawaReviews</title>         <!-- Browser tab title -->
-    <link class="br-icon" rel="br-icon" href="browser_icon.jpg">       <!-- Browser tab icon -->
+    <link rel="icon" href="browser_icon.jpg">       <!-- Browser tab icon -->
     <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
 </head>
 
 <body>
-<div class="bg-img"></div>
-
 <div class="header">
     <nav>
         <div class="site-name">
@@ -19,12 +17,12 @@
             <li><a href="">Home</a></li>
             <li><a href="">About Us</a></li>
             <li><a href="">Contact Us</a></li>
-            <li><a href="registration.html">Login/Register</a></li>
+            <li><a href="login.html">Login/Register</a></li>
         </ul>
     </nav>
 </div>
 <img class="center" src="browser_icon.jpg" alt="Website logo" >
-<fieldset class="search"><legend>Search</legend>
+<fieldset class="search"><legend>Find Restaurants</legend>
     <form action="" method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
         <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
         <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
@@ -36,6 +34,7 @@
             <option value="5">5 Stars</option>
         </select>
         <button type="submit" name="submit">Search!</button>
-    </form></fieldset>
+    </form>
+</fieldset>
 </body>
 </html>

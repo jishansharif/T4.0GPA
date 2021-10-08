@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ShawaReviews - Register New Account</title>         <!-- Browser tab title -->
+    <title>ShawaReviews - Login</title>
     <link rel="icon" href="browser_icon.jpg">       <!-- Browser tab icon -->
     <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
 </head>
@@ -20,23 +20,20 @@
         </ul>
     </nav>
 </div>
-<fieldset class="registration-form">
-    <legend>Register a New Account</legend>
+<fieldset class="login-form">
+    <legend>Login</legend>
     <form action="" method="post">       <!-- Action not yet specified. "post" selected for username security -->
-        <input type="text" name="new-username" placeholder="Username">
+        <input type="text" name="username" placeholder="Username">
     </form>
     <form action="" method="get">        <!-- Action not yet specified. "post" selected for password security -->
-        <input type="text" name="create-password" placeholder="Password">
+        <input type="text" name="password" placeholder="Password">
     </form>
-    <form action="" method="get">        <!-- Action not yet specified. "post" selected for password security -->
-        <input type="text" name="conf-password" placeholder="Confirm Password">
-    </form>
-    <form action="" method="post">       <!-- Action not yet specified. "post" selected for username security -->
-        <input type="text" name="email" placeholder="Email Address">
-    </form>
-    <button type="submit" name="register-confirmation">Forgot Password?</button>
+    <button type="submit" name="login">Login</button>
+    <button type="submit" name="forgot">Forgot Password?</button>
+    <form action="registration.html">
+        <button type="submit" name="register">Register New User</button>
     </form>
 </fieldset>
-
+</div>
 </body>
 </html>
