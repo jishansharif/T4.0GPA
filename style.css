@@ -1,11 +1,109 @@
-body {
-    background-color: beige;        /* Sets page background color */
+* {
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-fieldset {
-    width: 200px;       /* Sets the width of the search fieldset */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("web_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img {
+    background-image: url("web_bg.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    opacity: 50%;
+}
+
+.header {       /* Styling the header */
+    width: 100%;
+    height: 50px;
+    display: block;
+    position: relative;
+    opacity: 0.5;
+}
+
+.site-name {       /* Styling the header logo */
+    height: 100%;
+    text-align: left;
+}
+
+.site-name h1 {
+    color: white;
+    height: 100%;
+    vertical-align: middle;
+    font-family: "Comic Sans MS";
+    font-size: 32px;
+    font-weight: 200;
+    text-align: left;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    padding: 28px 0;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 0;
+    font-family: "Comic Sans MS";
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: '';
+    background: #A57548;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;         /* Ensures image is centered */
+    height: 300px;
+    width: 109px;
+    mix-blend-mode: multiply;       /* Removes image's white background and makes it blend with background color */
+}
+
+.search {
+    border: 3px solid rgb(200, 200, 200);
+    width: 400px;       /* Sets the width of the search fieldset */
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 24px;
 }
 
 form {
-    width: 150px;       /* Sets the width of the search bar */
+    display: block;
+    width: 100%;       /* Sets the width of the search bar */
+    text-align: center;
+
 }

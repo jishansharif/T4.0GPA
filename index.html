@@ -2,13 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My First Website</title>         <!-- Browser tab title -->
-    <link rel="icon" href="browser_icon.jpg">       <!-- Browser tab icon -->
+    <title>ShawaReviews</title>         <!-- Browser tab title -->
+    <link class="br-icon" rel="br-icon" href="browser_icon.jpg">       <!-- Browser tab icon -->
     <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
 </head>
 
 <body>
-<fieldset><legend>Search</legend>
+<div class="bg-img"></div>
+
+<div class="header">
+    <nav>
+        <div class="site-name">
+            <h1>ShawaREVIEWS</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="registration.html">Login/Register</a></li>
+        </ul>
+    </nav>
+</div>
+<img class="center" src="browser_icon.jpg" alt="Website logo" >
+<fieldset class="search"><legend>Search</legend>
     <form action="" method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
         <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
         <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
