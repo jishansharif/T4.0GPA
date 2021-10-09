@@ -184,7 +184,6 @@ input {
 }
 
 .login-input:focus {
-    border-color: var(--color-primary);
     background: #F6C28B;
 }
 
@@ -194,7 +193,7 @@ input {
     font-weight: bold;
     font-size: 1.1rem;
     color: white;
-    border: 1px;border-radius: var(--border-radius);
+    border: 1px;border-radius: 2rem;
     outline: none;
     cursor: pointer;
     background: #82DDF0;
