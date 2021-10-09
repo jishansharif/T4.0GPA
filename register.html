@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Rate My Shawarma</title>
-    <link rel="icon" href="browser_icon.jpg">       <!-- Browser tab icon -->
     <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
-    </head>
+</head>
 <body>
     <nav class="nav-bar">
         <div class="nav-logo">
@@ -16,24 +15,27 @@
             <li><a href="#">About Us</a></li>
             <li><a href="submit_review.html">Submit Review</a></li>
             <li><a href="login.html">Login/Register</a></li>
-        </ul>
+      </ul>
     </nav>
 
     <div class="container">
-        <form class="login" id="login">
-            <h1 class="login-title">Login</h1>
+        <form class="registration-form" id="register">
+            <h1 class="register-title">Create a New Account</h1>
             <div class="input">
-                <input type="text" class="login-form-input" autofocus placeholder="Username/Email">
+                <input type="text" class="login-form-input" autofocus placeholder="Username">
+            </div>
+            <div class="input">
+                <input type="text" class="login-form-input" autofocus placeholder="Email">
             </div>
             <div class="input">
                 <input type="password" class="login-form-input" autofocus placeholder="Password">
             </div>
-            <button class="button" type="submit">Continue</button>
+            <div class="input">
+                <input type="password" class="login-form-input" autofocus placeholder="Confirm Password">
+            </div>
+            <button class="button" type="submit">Create Account</button>
             <p class="form-text">
-                <a href="#" class="forgot-pw">Forgot your password?</a>
-            </p>
-            <p class="reg-link">
-                <a class="reg-url" href="register.html" id="reg-link">New User? Create an account.</a>
+                <a href="login.html" class="already-registered">Already have an account? Login</a>
             </p>
         </form>
     </div>

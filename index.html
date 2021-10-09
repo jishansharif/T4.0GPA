@@ -2,39 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ShawaReviews</title>         <!-- Browser tab title -->
+    <title>RateMyShawarma</title>         <!-- Browser tab title -->
     <link rel="icon" href="browser_icon.jpg">       <!-- Browser tab icon -->
     <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
 </head>
 
 <body>
 <div class="header">
-    <nav>
-        <div class="site-name">
-            <h1>ShawaREVIEWS</h1>
+    <nav class="nav-bar">
+        <div class="nav-logo">
+            <h4>RateMyShawarma</h4>
         </div>
         <ul class="nav-links">
-            <li><a href="">Home</a></li>
-            <li><a href="">About Us</a></li>
-            <li><a href="">Contact Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="submit_review.html">Submit Review</a></li>
             <li><a href="login.html">Login/Register</a></li>
         </ul>
     </nav>
 </div>
-<img class="center" src="browser_icon.jpg" alt="Website logo" >
-<fieldset class="search"><legend>Find Restaurants</legend>
-    <form action="" method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
-        <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
-        <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
-            <option value="none">Search by Rating</option>
-            <option value="1">1 Star</option>
-            <option value="2">2 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="5">5 Stars</option>
-        </select>
-        <button type="submit" name="submit">Search!</button>
-    </form>
-</fieldset>
+
+    <fieldset class="search"><legend>Find Restaurants</legend>
+        <form action="" method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
+            <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
+            <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
+                <option value="none">Search by Rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <button type="submit" name="submit">Search!</button>
+        </form>
+    </fieldset>
+    <footer>
+        <div class="footer-content">
+            <h3>RateMyShawarma</h3>
+            <p>Follow us on Social Media!</p>
+            <ul class="social-media">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="insta"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

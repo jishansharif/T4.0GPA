@@ -1,95 +1,47 @@
 * {
-    margin: 0;
-    list-style: none;
-    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: url("web_bg.jpg");
+    background-image: url(web_bg.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-}
-
-.bg-img {
-    background-image: url("web_bg.jpg");
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
     height: 100%;
-    opacity: 50%;
+    min-height: 100%;
 }
 
-.header {       /* Styling the header */
-    width: 100%;
-    height: 50px;
-    display: block;
-    position: relative;
-    opacity: 0.5;
-}
-
-.site-name {       /* Styling the header logo */
-    height: 100%;
-    text-align: left;
-}
-
-.site-name h1 {
-    color: white;
-    height: 100%;
-    vertical-align: middle;
-    font-family: "Comic Sans MS";
-    font-size: 32px;
-    font-weight: 200;
-    text-align: left;
-}
-
-nav {
+.nav-bar {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
+    min-height: 50px;
+    background-color: #A57548;
+    font-family: "Comic Sans MS";
+}
+
+.nav-logo {
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-links {
-    padding: 28px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
 }
 
 .nav-links li {
-    display: inline-block;
-    margin: 0 15px;
+    list-style: none;
 }
 
-.nav-links li a {
+.nav-links a {
+    color: #FCD7AD;
     text-decoration: none;
-    color: white;
-    padding: 5px 0;
-    font-family: "Comic Sans MS";
     position: relative;
-}
-
-.nav-links li a::after {
-    content: '';
-    background: #A57548;
-    width: 0;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: width 0.5s;
-}
-
-.nav-links li a:hover::after {
-    width: 100%;
-}
-
-img.center {
-    display: block;
-    margin: 0 auto;         /* Ensures image is centered */
-    height: 300px;
-    width: 109px;
-    mix-blend-mode: multiply;       /* Removes image's white background and makes it blend with background color */
 }
 
 .search {
@@ -98,12 +50,99 @@ img.center {
     margin: auto;
     text-align: center;
     color: white;
-    font-size: 24px;
+    font-size: 30px;
+    vertical-align: center;
+    margin-top: 20%;
 }
 
-form {
-    display: block;
-    width: 100%;       /* Sets the width of the search bar */
-    text-align: center;
 
+.container {
+    position: absolute;
+    background-color: #F6C28B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 7px;
+    right: 50%;
+    left: 50%;
+    top: 40%;
+}
+
+.container, .form-login, .form-pw {
+    font: 500 1rem 'Comic Sans MS', sans-serif;
+}
+
+.login > *:first-child {
+    margin-top: 0;
+}
+
+.login > *:last-child {
+    margin-bottom: 0;
+}
+
+.login-title {
+    color: black;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 1rem;
+}
+
+.login-form-input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+    outline: none;
+    background: white;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.login-input:focus {
+    border-color: var(--color-primary);
+    background: #F6C28B;
+}
+
+.button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    border: 1px;border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: #82DDF0;
+}
+
+.button:hover {
+    background: #5296A5;
+}
+
+footer {
+    background-color: #A57548;
+    clear: both;
+    height: auto;
+    width: 100%;
+    margin-top: -200px;
+    font-family: "Comic Sans MS";padding-top: 30px;
+    color: #F6C28B;
+}
+
+.footer-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
