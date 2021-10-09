@@ -21,30 +21,40 @@
         </ul>
     </nav>
 </div>
+    <div id="contents">
+        <fieldset class="search"><legend>Find Restaurants</legend>
+            <form action="" method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
+                <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
+                <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
+                    <option value="none">Search by Rating</option>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+                <button type="submit" name="submit">Search!</button>
+            </form>
+        </fieldset>
+    </div>
 
-    <fieldset class="search"><legend>Find Restaurants</legend>
-        <form action="" method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
-            <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
-            <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
-                <option value="none">Search by Rating</option>
-                <option value="1">1 Star</option>
-                <option value="2">2 Stars</option>
-                <option value="3">3 Stars</option>
-                <option value="4">4 Stars</option>
-                <option value="5">5 Stars</option>
-            </select>
-            <button type="submit" name="submit">Search!</button>
-        </form>
-    </fieldset>
+<div class="site-footer">
     <footer>
-        <div class="footer-content">
-            <h3>RateMyShawarma</h3>
-            <p>Follow us on Social Media!</p>
-            <ul class="social-media">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="insta"></i></a></li>
-            </ul>
+        <p class="follow">Follow us on Social Media!</p>
+        <p><br></p>
+        <div class="social">
+            <a href="#"><i class="icon ion-social-instagram"></i></a>
+            <a href="#"><i class="icon ion-social-twitter"></i></a>
+            <a href="#"><i class="icon ion-social-facebook"></i></a>
         </div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Contact Us</a></li>
+        </ul>
+        <p class="copyright">RateMyShawarma © 2021</p>
     </footer>
+</div>
+
 </body>
 </html>
