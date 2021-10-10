@@ -240,9 +240,8 @@ input {
 }
 
 .grid-map {
-    size: 100%;
     display: grid;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 30% 50% 20%;
     grid-gap: 1em 1em;
     padding: 10px;
     width: 100vw;
@@ -261,7 +260,7 @@ input {
 }
 
 .rest-image {
-    height: 400px;
+    height: 100%;
 }
 
 .pie-score {
@@ -288,7 +287,8 @@ footer {
     height: auto;
     width: 100%;
     margin-top: -200px;
-    font-family: "Comic Sans MS";padding-top: 30px;
+    font-family: "Comic Sans MS";
+    padding-top: 30px;
     color: #F6C28B;
 }
 
