@@ -7,6 +7,8 @@ Authors:
 
 
 Link to the server:
+http://18.223.146.95/
+
 
 
 
