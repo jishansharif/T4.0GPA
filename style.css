@@ -62,83 +62,6 @@ body {
     margin-top: 20%;
 }
 
-#contents {
-    min-height: 100%;
-}
-
-#main {
-    overflow: auto;
-    padding-bottom: 100px;
-}
-
-.follow {
-    text-align: center;
-}
-
-.site-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    padding:40px 0;
-    background-color:#ffffff;
-    color:#4b4c4d;
-}
-
-.site-footer ul {
-    padding:0;
-    list-style:none;
-    text-align:center;
-    font-size:18px;
-    line-height:1.6;
-    margin-bottom:0;
-}
-
-.site-footer li {
-    padding:0 10px;
-}
-
-.site-footer ul a {
-    color:inherit;
-    text-decoration:none;
-    opacity:0.8;
-}
-
-.site-footer ul a:hover {
-    opacity:1;
-}
-
-.site-footer .social {
-    text-align:center;
-    padding-bottom:25px;
-}
-
-.site-footer .social > a {
-    font-size:24px;
-    width:40px;
-    height:40px;
-    line-height:40px;
-    display:inline-block;
-    text-align:center;
-    border-radius:50%;
-    border:1px solid #ccc;
-    margin:0 8px;
-    color:inherit;
-    opacity:0.75;
-}
-
-.site-footer .social > a:hover {
-    opacity:0.9;
-}
-
-.site-footer .copyright {
-    margin-top:15px;
-    text-align:center;
-    font-size:13px;
-    color:#aaa;
-    margin-bottom:0;
-}
-
 .container {
     position: absolute;
     background-color: #F6C28B;
@@ -152,8 +75,8 @@ body {
     padding: 2rem;
     border-radius: 7px;
     right: 50%;
-    left: 50%;
-    top: 40%;
+    left: 40%;
+    top: 20%;
 }
 
 .container, .form-login, .form-pw {
@@ -241,7 +164,7 @@ input {
 
 .grid-map {
     display: grid;
-    grid-template-rows: 30% 50% 20%;
+    grid-template-rows: 50% 50%;
     grid-gap: 1em 1em;
     padding: 10px;
     width: 100vw;
@@ -282,21 +205,15 @@ input {
 }
 
 footer {
-    background-color: #A57548;
-    clear: both;
-    height: auto;
-    width: 100%;
-    margin-top: -200px;
+    position: absolute;
+    display: flex;
     font-family: "Comic Sans MS";
-    padding-top: 30px;
-    color: #F6C28B;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #A57548;
+    color: white;
+    text-align: center;
+    justify-content: space-around;
 }
 
-.footer-content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
