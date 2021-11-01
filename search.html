@@ -9,22 +9,6 @@
 </head>
 
 <body>
-    <script>
-        var x = document.getElementById("search");
-        
-        function getLocation() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-          } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";
-          }
-        }
-        
-        function showPosition(position) {
-          x.innerHTML = "Latitude: " + position.coords.latitude + 
-          "<br>Longitude: " + position.coords.longitude;
-        }
-    </script>
     <div class="header">
         <nav class="nav-bar">
             <div class="nav-logo">
@@ -51,7 +35,7 @@
                     <option value="4">4 Stars</option>
                     <option value="5">5 Stars</option>
                 </select>
-                <button type="submit" name="submit" id="search" onclick="getLocation()">Search!</button>
+                <button type="submit" name="submit" id="search" onclick="searchResturant()">Search!</button>
             </form>
         </fieldset>
     </div>
