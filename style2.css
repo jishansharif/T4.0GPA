@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(media/web_bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Comic Sans MS";
+}
+
+
+
+.nav-bar {
+    position:fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 15px;
+    max-height: 60px;
+    background: #A57548;
+}
+
+.nav-logo {
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    float: left;
+    margin-left: 25px;
+}
+
+.nav-links {
+    margin-right: 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    float: right;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+}
+
+.nav-links a {
+    color: #FCD7AD;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #F6C28B;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    heigh: 5px;
+    width: 100%;
+    background: #444;
+}
+
+.container-reg {
+    background-color: #F6C28B;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.reg-header {
+    background-color: #A57548;
+    border-bottom: 1px solid #FCD7AD;
+    padding: 20px 40px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.reg-form {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+
+}
+
+.reg-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.reg-form input {
+    border: 2px solid #A57548;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.reg-form i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.reg-form small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form button {
+    background-color: #5296A5;
+    border: 2px solid #A57548;
+    color: white;
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+
+.reg-form.success input {
+    border-color: limegreen;
+}
+
+.reg-form.error input {
+    border-color: red;
+}
+
+.reg-form.success i.fa-check-circle {
+    visibility: visible;
+    color: limegreen;
+}
+
+.reg-form.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: red
+}
+
+.reg-form.error small {
+    visibility: visible;
+    color: red;
+}
+
+footer {
+    position: absolute;
+    display: flex;
+    font-family: "Comic Sans MS";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #A57548;
+    color: white;
+    text-align: center;
+    justify-content: space-around;
+}
+
+footer a {
+    text-decoration: none;
+    color: #FCD7AD;
+}
+
+footer a:hover {
+    color: #F6C28B;
+}
