@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>RateMyShawarma</title>         <!-- Browser tab title -->
     <link rel="icon" href="media/browser_icon.jpg">       <!-- Browser tab icon -->
-    <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
+    <link rel="stylesheet" type="text/css" href="style2.css">        <!-- Importing CSS file -->
 </head>
 
 <body>
-<div class="header">
     <nav class="nav-bar">
         <div class="nav-logo">
             <h4>RateMyShawarma</h4>
@@ -20,22 +19,36 @@
             <li><a href="login.html">Login/Register</a></li>
         </ul>
     </nav>
-</div>
-<div class="container">
-    <form class="submission-form" id="submit">
-        <h1 class="register-title">Submit a Review</h1>
+
+<div class="container-submission">
+    <div class="header">
+        <h2>Submit Review</h2>
+    </div>
+    <form class="form" id="form">
         <!-- Most important purpose of our app, to submit a review for a resturant-->
-        <div class="input">
-            <input type="text" class="login-form-input" autofocus placeholder="Restaurant Name">
+        <div class="submit-form">
+            <label for="restaurant-name">Restaurant Name</label>
+            <input type="text" placeholder="Restaurant Name" id="restaurant-name" required>
+            <!-- Minimal restrictions since many restaurant names include special characters -->
         </div>
-        <div class="input">
-            <input type="text" class="login-form-input" placeholder="Rating (Out of 5)">
+        <div class="submit-form">
+            <label for="rating">Rating</label>
+            <input type="number" placeholder="Rating (Out of 5)" id="rating"
+                   min="0" max="5" required>  <!-- Ensures input is a number (0-5) -->
         </div>
-        <div class="input">
-            <input type="text" class="login-form-input" placeholder="Latitude">
+        <div class="submit-form">
+            <label for="latitude">Latitude</label>
+            <input type="number" placeholder="Latitude" id="latitude"
+                   step="0.0001" min="-90" max="90" required>  <!-- Ensures valid latitude value
+                    is entered; value set to 4 decimal places since that is how Google displays
+                    coordinates-->
         </div>
-        <div class="input">
-            <input type="text" class="login-form-input" placeholder="Longitude">
+        <div class="submit-form">
+            <label for="longitude">Longitude</label>
+            <input type="text" placeholder="Longitude" id="longitude"
+                   step="0.0001" min="-180" max="180" required> <!-- Ensures valid longitude value
+                    is entered; value set to 4 decimal places since that is how Google displays
+                    coordinates-->
         </div>
         <button class="button" type="submit">Submit Review</button>
     </form>
