@@ -15,8 +15,6 @@ body {
     font-family: "Comic Sans MS";
 }
 
-
-
 .nav-bar {
     position:fixed;
     width: 100%;
@@ -69,6 +67,17 @@ nav a::before {
     background: #444;
 }
 
+.search {
+    border: 3px solid rgb(200, 200, 200);
+    width: 400px;       /* Sets the width of the search fieldset */
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    vertical-align: center;
+    margin-top: 20%;
+}
+
 .container-reg {
     background-color: #F6C28B;
     border-radius: 5px;
@@ -77,10 +86,11 @@ nav a::before {
     overflow: hidden;
 }
 
-.reg-header {
+.header {
     background-color: #A57548;
     border-bottom: 1px solid #FCD7AD;
     padding: 20px 40px;
+    color: white;
 }
 
 .header h2 {

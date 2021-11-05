@@ -4,41 +4,40 @@
     <meta charset="UTF-8">
     <title>RateMyShawarma</title>         <!-- Browser tab title -->
     <link rel="icon" href="media/browser_icon.jpg">       <!-- Browser tab icon -->
-    <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
+    <link rel="stylesheet" type="text/css" href="style2.css">        <!-- Importing CSS file -->
     <script type="text/javascript" src="search.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <nav class="nav-bar">
-            <div class="nav-logo">
-                <h4>RateMyShawarma</h4>
-            </div>
-            <ul class="nav-links">
-                <!-- We set up the nav bar here. The Home page is linked to this file, search.html-->
-                <li><a href="search.html">Home</a></li>
-                <li><a href="results_sample.html">Search Results</a></li>
-                <li><a href="submission.html">Submit Review</a></li> <!--The Submit review page is linied to submission.html-->
-                <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
-            </ul>
-        </nav>
+<nav class="nav-bar">
+    <div class="nav-logo">
+        <h4>RateMyShawarma</h4>
     </div>
-    <div id="contents">
-        <fieldset class="search"><legend>Find Restaurants</legend>
-            <form method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
-                <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
-                <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
-                    <option value="none">Search by Rating</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
-                </select>
-                <button type="submit" name="submit" id="search" onclick="searchResturant()">Search!</button>
-            </form>
-        </fieldset>
-    </div>
+    <ul class="nav-links">
+        <!-- We set up the nav bar here. The Home page is linked to this file, search.html-->
+        <li><a href="search.html">Home</a></li>
+        <li><a href="results_sample.html">Search Results</a></li>
+        <li><a href="submission.html">Submit Review</a></li> <!--The Submit review page is linied to submission.html-->
+        <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
+    </ul>
+</nav>
+
+<div id="contents">
+    <fieldset class="search"><legend>Find Restaurants</legend>
+        <form method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
+            <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
+            <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
+                <option value="none">Search by Rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <button type="submit" name="submit" id="search" onclick="searchResturant()">Search!</button>
+        </form>
+    </fieldset>
+</div>
 
 <div class="site-footer">
     <footer>

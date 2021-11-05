@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Rate My Shawarma</title>
     <link rel="icon" href="media/browser_icon.jpg">       <!-- Browser tab icon -->
-    <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
+    <link rel="stylesheet" type="text/css" href="style2.css">        <!-- Importing CSS file -->
     </head>
 <body>
     <nav class="nav-bar">
@@ -19,16 +19,20 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <form class="login" id="login">
-            <h1 class="login-title">Login</h1> <!-- Set up the login Form here-->
+    <div class="container-reg">
+        <div class="header">
+            <h2>Login</h2> <!-- Set up the login Form here-->
+        </div>
+        <form class="form" id="form">
             <!-- Set up two input tags: Username and Password. The password will be of type password.-->
             <!-- We use a placeholder to allow users to know what they'll need to enter in each field-->
-            <div class="input">
-                <input type="text" class="login-form-input" autofocus placeholder="Username/Email">
+            <div class="reg-form">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Username" id="username">
             </div>
-            <div class="input">
-                <input type="password" class="login-form-input" placeholder="Password">
+            <div class="reg-form">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password">
             </div>
             <button class="button" type="submit">Continue</button>
             <p class="form-text">
