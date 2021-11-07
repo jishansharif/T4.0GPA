@@ -6,6 +6,9 @@
     <link rel="icon" href="media/browser_icon.jpg">       <!-- Browser tab icon -->
     <link rel="stylesheet" type="text/css" href="style2.css">        <!-- Importing CSS file -->
     <script type="text/javascript" src="search.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
 </head>
 
 <body>
@@ -24,9 +27,9 @@
 
 <div id="contents">
     <fieldset class="search"><legend>Find Restaurants</legend>
-        <form method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
-            <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
-            <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
+        <form method="get" id="searchform">       <!-- Action not yet specified. "get" selected since this is a search box -->
+            <input type="text" name="Search bar" placeholder="Search for locations" id="location">        <!-- Search by name -->
+            <select name="stars" id="rating">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
                 <option value="none">Search by Rating</option>
                 <option value="1">1 Star</option>
                 <option value="2">2 Stars</option>
@@ -34,7 +37,8 @@
                 <option value="4">4 Stars</option>
                 <option value="5">5 Stars</option>
             </select>
-            <button type="submit" name="submit" id="search" onclick="searchResturant()">Search!</button>
+            <button onclick="initMap()">Search</button>
+            <p id="display">Hello World</p>
         </form>
     </fieldset>
 </div>
@@ -47,6 +51,9 @@
         <a>RateMyShawarma © 2021</a>
     </footer>
 </div>
-
+<!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&channel=2"
+      async
+    ></script> -->
 </body>
 </html>
