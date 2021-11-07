@@ -78,6 +78,14 @@ nav a::before {
     margin-top: 20%;
 }
 
+.container-submission {
+    background-color: #F6C28B;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .container-reg {
     background-color: #F6C28B;
     border-radius: 5px;
@@ -101,16 +109,34 @@ nav a::before {
     padding: 30px 40px;
 }
 
+.submit-form {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
 .reg-form {
     margin-bottom: 10px;
     padding-bottom: 20px;
     position: relative;
-
 }
+
+.submit-form label {
+    display: block;
+    margin-bottom: 5px;}
 
 .reg-form label {
     display: block;
     margin-bottom: 5px;
+}
+
+.submit-form input {
+    border: 2px solid #A57548;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
 }
 
 .reg-form input {
