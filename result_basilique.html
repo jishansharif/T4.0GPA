@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RateMyShawarma</title>         <!-- Browser tab title -->
+    <link rel="stylesheet" href="results_style.css">
+    <link rel="icon" href="media/browser_icon.jpg">       <!-- Browser tab icon -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <style>
+        #map { height: 100%; }
+    </style>
+</head>
+
+<body>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<script type="text/javascript" src="map.js"></script>
+
+<div class="grid-container">
+    <div class="item1">
+        <nav class="nav-bar">
+            <div class="nav-logo">
+                <h4>RateMyShawarma</h4>
+            </div>
+            <ul class="nav-links">
+                <!-- We set up the nav bar here. The Home page is linked to this file, search.html-->
+                <li><a href="search.html">Home</a></li>
+                <li><a href="results_sample.html">Search Results</a></li>
+                <li><a href="submission.html">Submit Review</a></li> <!--The Submit review page is linied to submission.html-->
+                <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
+            </ul>
+        </nav>
+    </div>
+
+    <div class="item2">
+        <fieldset>
+            <b>Basilique</b>
+            <p><br</p>
+            <img class="pie-score" src="media/4.7-rating.png">
+            <p>4.7 stars</p>
+            <p>Number of Reviews: 217</p>
+            <p>Address: 1554 Main St W, Hamilton, ON L8S 1E5</p>
+            <p><br></p>
+        </fieldset>
+
+        <p>Top Review: "Best AUTHENTIC shawarma in Hamilton!" (5 Stars)</p>
+        <p><br></p>
+        <p><b>Most popular item</b>: Lamb Shawarma Poutine</p>
+    </div>
+
+    <div class="item3">
+        <div id="map"></div>
+        <script>
+            loadMap(43.2610, -79.9075, 18);
+        </script>
+    </div>
+
+
+    <div class="item4">
+        <footer>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact Us</a>
+            <a>RateMyShawarma © 2021</a>
+        </footer>
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
