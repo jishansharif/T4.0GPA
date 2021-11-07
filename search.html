@@ -9,6 +9,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
+    <style>
+        #map { height: 100%; }
+    </style>
 </head>
 
 <body>
@@ -24,6 +27,11 @@
         <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
     </ul>
 </nav>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<script type="text/javascript" src="map.js"></script>
+<script type="text/javascript" src="search.js"></script>
 
 <div id="contents">
     <fieldset class="search"><legend>Find Restaurants</legend>
@@ -37,10 +45,18 @@
                 <option value="4">4 Stars</option>
                 <option value="5">5 Stars</option>
             </select>
-            <button onclick="initMap()">Search</button>
-            <p id="display">Hello World</p>
+            <button>Search</button>
+            <button onclick="getLocation()">Find resturants near you</button>
+            <!-- <div id="map"></div> -->
         </form>
     </fieldset>
+</div>
+
+<div class="item3">
+    <p id="map"></p>
+    <!-- <script>
+        getLocation();
+    </script> -->
 </div>
 
 <div class="site-footer">
