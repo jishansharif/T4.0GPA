@@ -12,7 +12,4 @@ Here are the steps to view the individual object page
 Link to the server:
 http://18.223.146.95/
 
-
-
-
-
+We bought a domain for our website, feel free to check it out: https://ratemyshawarma.com/
