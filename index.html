@@ -4,41 +4,82 @@
     <meta charset="UTF-8">
     <title>RateMyShawarma</title>         <!-- Browser tab title -->
     <link rel="icon" href="media/browser_icon.jpg">       <!-- Browser tab icon -->
-    <link rel="stylesheet" type="text/css" href="style.css">        <!-- Importing CSS file -->
+    <link rel="stylesheet" type="text/css" href="style2.css">        <!-- Importing CSS file -->
+    <script type="text/javascript" src="search.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
+    <style>
+        #map { height: 100%; }
+    </style>
 </head>
 
 <body>
-    <div class="header">
-        <nav class="nav-bar">
-            <div class="nav-logo">
-                <h4>RateMyShawarma</h4>
-            </div>
-            <ul class="nav-links">
-                <!-- We set up the nav bar here. The Home page is linked to this file, search.html-->
-                <li><a href="search.html">Home</a></li>
-                <li><a href="westdale_results.html">Search Results</a></li>
-                <li><a href="submission.html">Submit Review</a></li> <!--The Submit review page is linied to submission.html-->
-                <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
-            </ul>
-        </nav>
+<nav class="nav-bar">
+    <div class="nav-logo">
+        <h4>RateMyShawarma</h4>
     </div>
-    <div id="contents">
-        <fieldset class="search"><legend>Find Restaurants</legend>
-            <form method="get">       <!-- Action not yet specified. "get" selected since this is a search box -->
-                <input type="text" name="Search bar" placeholder="Search for locations">        <!-- Search by name -->
-                <select name="stars">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
-                    <option value="none">Search by Rating</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
-                </select>
-                <button type="submit" name="submit">Search!</button>
-            </form>
-        </fieldset>
-    </div>
+    <ul class="nav-links">
+        <!-- We set up the nav bar here. The Home page is linked to this file, search.html-->
+        <li><a href="search.html">Home</a></li>
+        <li><a href="westdale_results.html">Search Results</a></li>
+        <li><a href="submission.html">Submit Review</a></li> <!--The Submit review page is linied to submission.html-->
+        <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
+    </ul>
+</nav>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+<script type="text/javascript" src="map.js"></script>
+<script type="text/javascript" src="search.js"></script>
 
+<div id="contents">
+    <fieldset class="search"><legend>Find Restaurants</legend>
+        <form method="get" id="searchform">       <!-- Action not yet specified. "get" selected since this is a search box -->
+            <input type="text" name="Search bar" placeholder="Search by Resturant Name" id="location">        <!-- Search by name -->
+            <select name="stars" id="rating">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
+                <option value="none">Search by Rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <button>Search</button>
+            
+            <!-- <p id="map"></p> -->
+            <!-- <button onclick="getLocation()">Find resturants near you</button> -->
+        </form>
+        <a id ="display"></a>
+        <button onclick="getLocation()">View current location</button>
+        <a href="westdale_results.html" id="map"> Find resturants near you!</a>
+    </fieldset>
+</div>
+
+
+<!-- <div class="item3">
+    
+    
+    <script>
+        getLocation();
+    </script>
+</div> -->
+
+<script>
+    var display = document.getElementById("display");
+    function getLocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        display.innerHTML = "Geolocation is not supported by this browser.";
+      }
+}
+
+function showPosition(position) {
+    display.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 <div class="site-footer">
     <footer>
             <a href="#">Privacy Policy</a>
@@ -47,6 +88,9 @@
         <a>RateMyShawarma © 2021</a>
     </footer>
 </div>
-
+<!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&channel=2"
+      async
+    ></script> -->
 </body>
 </html>
