@@ -42,6 +42,7 @@
                    step="0.0001" min="-90" max="90" required>  <!-- Ensures valid latitude value
                     is entered; value set to 4 decimal places since that is how Google displays
                     coordinates-->
+            <i onclick="getLatitude()">Click to retreieve latitude</i>
         </div>
         <div class="submit-form">
             <label for="longitude">Longitude</label>
@@ -49,11 +50,54 @@
                    step="0.0001" min="-180" max="180" required> <!-- Ensures valid longitude value
                     is entered; value set to 4 decimal places since that is how Google displays
                     coordinates-->
+            <i onclick="getLongitude()">Click to retreieve longitude</i>
         </div>
         <button class="button" type="submit">Submit Review</button>
     </form>
 </div>
+<script>
 
+
+function getLatitude() {
+    var latitude = document.getElementById("latitude").value = "1.234454"
+}
+
+
+function getLongitude(){
+    var longitude = document.getElementById("longitude").value = "3.14159265"
+}
+    
+//     var longitude = document.getElementById("longitude").value
+//     function getLocation(){
+    
+//     // console.log(location);
+//     // console.log('---------------------');
+//     // console.log(form);
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition);
+//       } else { 
+//         display.value = "Geolocation is not supported by this browser.";
+//       }
+// }
+
+// function showPosition(position) {
+//     display.value = "Latitude: " + position.coords.latitude + 
+//     "<br>Longitude: " + position.coords.longitude;
+//     return display
+//     // const mymap = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
+
+//     // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+//     //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//     //     maxZoom: 18,
+//     //     id: 'mapbox/streets-v11',
+//     //     tileSize: 512,
+//     //     zoomOffset: -1,
+//     //     accessToken: 'pk.eyJ1IjoiYWhtMTM4OCIsImEiOiJja3ZwNWJtbDAwcDI2Mm5xdmdjeWFnbnA5In0.U-FY7XjdPoITkJElfGJKgQ'
+//     // }).addTo(mymap);
+//     // var marker = L.marker([43.2610, -79.9075]).addTo(mymap);
+//     // marker.bindPopup("Basilique Shawarma")
+// }
+</script>
 <footer>
     <a href="#">Privacy Policy</a>
     <a href="#">Terms</a>
