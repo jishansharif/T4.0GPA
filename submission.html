@@ -46,7 +46,7 @@
         </div>
         <div class="submit-form">
             <label for="longitude">Longitude</label>
-            <input type="text" placeholder="Longitude" id="longitude"
+            <input type="number" placeholder="Longitude" id="longitude"
                    step="0.0001" min="-180" max="180" required> <!-- Ensures valid longitude value
                     is entered; value set to 4 decimal places since that is how Google displays
                     coordinates-->
@@ -57,46 +57,34 @@
 </div>
 <script>
 
+var latitude = document.getElementById("latitude");
+var longitude = document.getElementById("longitude");
 
 function getLatitude() {
-    var latitude = document.getElementById("latitude").value = "1.234454"
+    
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showLatitudePosition);
+    } else { 
+        latitude.value = "Geolocation is not supported by this browser.";
+    }
 }
-
 
 function getLongitude(){
-    var longitude = document.getElementById("longitude").value = "3.14159265"
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showLongitudePosition);
+    } else { 
+        latitude.value = "Geolocation is not supported by this browser.";
+    }
 }
-    
-//     var longitude = document.getElementById("longitude").value
-//     function getLocation(){
-    
-//     // console.log(location);
-//     // console.log('---------------------');
-//     // console.log(form);
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(showPosition);
-//       } else { 
-//         display.value = "Geolocation is not supported by this browser.";
-//       }
-// }
 
-// function showPosition(position) {
-//     display.value = "Latitude: " + position.coords.latitude + 
-//     "<br>Longitude: " + position.coords.longitude;
-//     return display
-//     // const mymap = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
+function showLatitudePosition(position) {
+  latitude.value = position.coords.latitude.toFixed(4)
+}
 
-//     // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-//     //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//     //     maxZoom: 18,
-//     //     id: 'mapbox/streets-v11',
-//     //     tileSize: 512,
-//     //     zoomOffset: -1,
-//     //     accessToken: 'pk.eyJ1IjoiYWhtMTM4OCIsImEiOiJja3ZwNWJtbDAwcDI2Mm5xdmdjeWFnbnA5In0.U-FY7XjdPoITkJElfGJKgQ'
-//     // }).addTo(mymap);
-//     // var marker = L.marker([43.2610, -79.9075]).addTo(mymap);
-//     // marker.bindPopup("Basilique Shawarma")
-// }
+function showLongitudePosition(position) {
+  longitude.value = position.coords.longitude.toFixed(4)
+}
+
 </script>
 <footer>
     <a href="#">Privacy Policy</a>
