@@ -22,7 +22,7 @@
     <ul class="nav-links">
         <!-- We set up the nav bar here. The Home page is linked to this file, search.html-->
         <li><a href="search.html">Home</a></li>
-        <li><a href="results_sample.html">Search Results</a></li>
+        <li><a href="westdale_results.html">Search Results</a></li>
         <li><a href="submission.html">Submit Review</a></li> <!--The Submit review page is linied to submission.html-->
         <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
     </ul>
@@ -46,27 +46,28 @@
                 <option value="5">5 Stars</option>
             </select>
             <button>Search</button>
-            <a href="westdale_results.html" id="map"> Find resturants near you!</a>
+            
             <!-- <p id="map"></p> -->
             <!-- <button onclick="getLocation()">Find resturants near you</button> -->
         </form>
+        <a id ="display"></a>
+        <button onclick="getLocation()">View current location</button>
+        <a href="westdale_results.html" id="map"> Find resturants near you!</a>
     </fieldset>
 </div>
 
 
 <!-- <div class="item3">
-    <button href="map.html" id="map"> Find resturants near you!</button>
+    
+    
     <script>
         getLocation();
     </script>
 </div> -->
 
 <script>
+    var display = document.getElementById("display");
     function getLocation(){
-    
-    // console.log(location);
-    // console.log('---------------------');
-    // console.log(form);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
       } else { 
@@ -77,19 +78,6 @@
 function showPosition(position) {
     display.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
-    return display
-    // const mymap = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
-
-    // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    //     maxZoom: 18,
-    //     id: 'mapbox/streets-v11',
-    //     tileSize: 512,
-    //     zoomOffset: -1,
-    //     accessToken: 'pk.eyJ1IjoiYWhtMTM4OCIsImEiOiJja3ZwNWJtbDAwcDI2Mm5xdmdjeWFnbnA5In0.U-FY7XjdPoITkJElfGJKgQ'
-    // }).addTo(mymap);
-    // var marker = L.marker([43.2610, -79.9075]).addTo(mymap);
-    // marker.bindPopup("Basilique Shawarma")
 }
 </script>
 <div class="site-footer">
