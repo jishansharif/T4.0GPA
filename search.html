@@ -31,7 +31,7 @@
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
 <script type="text/javascript" src="map.js"></script>
-<script type="text/javascript" src="search.js"></script>
+<!-- <script type="text/javascript" src="search.js"></script> -->
 
 <div id="contents">
     <fieldset class="search"><legend>Find Restaurants</legend>
@@ -46,19 +46,49 @@
                 <option value="5">5 Stars</option>
             </select>
             <button>Search</button>
+            <p id="map"></p>
             <button onclick="getLocation()">Find resturants near you</button>
-            <!-- <div id="map"></div> -->
         </form>
     </fieldset>
 </div>
 
-<div class="item3">
+<!-- <div class="item3">
     <p id="map"></p>
-    <!-- <script>
+    <script>
         getLocation();
-    </script> -->
-</div>
+    </script>
+</div> -->
+<script>
+    function getLocation(){
+    
+    // console.log(location);
+    // console.log('---------------------');
+    // console.log(form);
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        display.innerHTML = "Geolocation is not supported by this browser.";
+      }
+}
 
+function showPosition(position) {
+    display.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+    return display
+    // const mymap = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
+
+    // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    //     maxZoom: 18,
+    //     id: 'mapbox/streets-v11',
+    //     tileSize: 512,
+    //     zoomOffset: -1,
+    //     accessToken: 'pk.eyJ1IjoiYWhtMTM4OCIsImEiOiJja3ZwNWJtbDAwcDI2Mm5xdmdjeWFnbnA5In0.U-FY7XjdPoITkJElfGJKgQ'
+    // }).addTo(mymap);
+    // var marker = L.marker([43.2610, -79.9075]).addTo(mymap);
+    // marker.bindPopup("Basilique Shawarma")
+}
+</script>
 <div class="site-footer">
     <footer>
             <a href="#">Privacy Policy</a>
