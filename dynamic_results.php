@@ -51,9 +51,9 @@
         $rows = $statement->fetchall(PDO::FETCH_ASSOC);
 
         foreach ($rows as $row){
-            echo $row['name'] . "<br>";
-            echo $row['rating'] . " stars" . "<br>";
-            echo "Website: " . "<a href=dynamic_object.php?rest_id={$row['id']}>Visit Website</a>" . "<br><br>";
+            echo $row['name']."<br>";
+            echo $row['rating']." stars<br>";
+            echo "Website: "."<a href=dynamic_object.php?rest_id={$row['id']}>Visit Website</a>" . "<br><br>";
         } ?>
 
     </div>
