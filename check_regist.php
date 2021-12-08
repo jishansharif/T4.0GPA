@@ -43,12 +43,7 @@ if (empty($pw)) {
     array_push($errors, $password_error);
 }
 if (empty($errors)) {
-    $host = "localhost"; // Website IP address
-    $db = "ratemyshawarma";
-    $user = "root";
-    $password = "";
-
-    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password); // Create connection
+    include "connect_db.inc";
     $statement = $pdo->query("SELECT * FROM `users` WHERE (`username` = '$username')");
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
     if (empty($rows)) {

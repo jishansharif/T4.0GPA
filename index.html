@@ -16,16 +16,7 @@
 
 <body>
 <nav class="nav-bar">
-    <div class="nav-logo">
-        <h4>RateMyShawarma</h4>
-    </div>
-    <ul class="nav-links">
-        <!-- We set up the nav bar here. The Home page is linked to this file, search.html-->
-        <li><a href="search.html">Home</a></li>
-        <li><a href="westdale_results.html">Search Results</a></li>
-        <li><a href="submission.html">Submit Review</a></li> <!--The Submit review page is linied to submission.html-->
-        <li><a href="login.html">Login/Register</a></li> <!--The login page is linked to login.html-->
-    </ul>
+    <?php include 'navbar.inc' ?>
 </nav>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -52,7 +43,7 @@
         </form>
         <a id ="display"></a>
         <button onclick="getLocation()">View current location</button>
-        <a href="westdale_results.html" id="map"> Find resturants near you!</a>
+        <a href="westdale_results.php" id="map"> Find resturants near you!</a>
     </fieldset>
 </div>
 

@@ -27,17 +27,8 @@
     </div>
 
     <div class="item2">
-        <?php $host = "localhost"; // Website IP address
-        $db = "ratemyshawarma";
-        $user = "root";
-        $password = "";
-
-        try {
-            $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password); // Create connection
-        } catch (PDOException $e) {
-            print "Error!: " . $e->getMessage() . "<br/>"; // Check for connection errors
-            die(); // Terminates connection if there is an error
-        }
+        <?php
+        include "connect_db.inc";
 
         $name = $_GET["Search_bar"];
         if ($_GET["stars"] != "none") {
@@ -46,7 +37,6 @@
             $rating = 0;
         }
 
-        $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password); // Create connection
         $statement = $pdo->query("SELECT * FROM `restaurants` WHERE (`rating` >= $rating AND `name` LIKE '%$name%')");
         $rows = $statement->fetchall(PDO::FETCH_ASSOC);
 

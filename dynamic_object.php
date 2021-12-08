@@ -27,14 +27,10 @@
     </div>
 
     <div class="item2">
-        <fieldset>
+        <fieldset style="display: block; overflow: auto;">
             <?php
-            $host = "localhost"; // Website IP address
-            $db = "ratemyshawarma";
-            $user = "root";
-            $password = "";
+            include "connect_db.inc";
             $id = $_GET['rest_id'];
-            $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password); // Create connection
             $statement = $pdo->query("SELECT * FROM `restaurants` WHERE `id` = $id");
             $row = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -43,16 +39,33 @@
             echo $row['address'];
             ?>
         </fieldset>
+        <form action="review_form.php" method="get" >
+            <input name="username" placeholder="Username"><br>
+            <select name="stars" id="rating">       <!-- Drop down menu to search by rating (1 to 5 stars) -->
+                <option value="none">Rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select><br>
+            <input name="review" placeholder="Tell us about your experience with this restaurant"><br>
+            <input type="hidden" name="rest_id" value="<?php echo $id;?>">
+            <button><br>Submit Review<br></button>
+        </form>
+        <fieldset>
+            <p>Reviews:<br></p>
+            <?php
+            $statement2 = $pdo->query("SELECT * FROM `reviews` WHERE `rest_id` = $id");
+            $reviews = $statement2->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($reviews as $review){
+                echo "User: ".$review['username']."<br>";
+                echo "Rating: ".$review['rating']." stars<br>";
+                echo "\"".$review['review']."\""."<br><br>";
+            }
+            ?>
+        </fieldset>
 
-        <?php
-        $statement2 = $pdo->query("SELECT * FROM `reviews` WHERE `rest_id` = $id");
-        $reviews = $statement2->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($reviews as $review){
-            echo $review['username']."<br>";
-            echo $review['rating']." stars<br>";
-            echo $review['review']."<br><br>";
-        }
-        ?>
     </div>
 
     <div class="item3">
