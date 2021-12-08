@@ -5,22 +5,19 @@ const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
 
 form.addEventListener('submit', e => {
-    e.preventDefault();
-    checkInputs();
-})
-
-function checkInputs() {
     const unameVal = username.value.trim();
     const emailVal = email.value.trim();
     const pwVal = password.value.trim();
     const cpwVal = cpassword.value.trim();
 
+    var counter = 0;
     if (unameVal === '') {
         error(username, 'Username cannot be blank');
     } else if (!valUname(unameVal)) {
         error(username, 'Length: 6-16 (no special characters except _)')
     } else {
         success(username);
+        counter++;
     }
 
     if (emailVal === '') {
@@ -29,6 +26,7 @@ function checkInputs() {
         error(email, 'Please enter a valid email address')
     } else{
         success(email);
+        counter++;
     }
 
     if (pwVal === '') {
@@ -37,14 +35,22 @@ function checkInputs() {
         error(password, 'Length: 8-16 (1 number and 1 sp. character)')
     } else {
         success(password);
+        counter++;
     }
 
     if (cpwVal === '' || cpwVal != pwVal) {
         error(cpassword, 'Passwords must be both be valid and matching!');
     } else {
         success(cpassword);
+        counter++;
     }
-}
+
+    if (counter === 4) {
+        return;
+    } else {
+        e.preventDefault();
+    }
+})
 
 function error(input, message) {
     const regForm = input.parentElement;     // This references the reg-form class
