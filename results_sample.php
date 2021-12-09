@@ -42,7 +42,7 @@
 
 
                 </ol>
-                <a class="add-review-link" href="submission.php">Add your review</a>
+                <a class="add-review-link" href="add_restaurant.php">Add your review</a>
             </div>
         </div>
     </div>

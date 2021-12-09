@@ -9,7 +9,7 @@
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin=""/>
     <style>
-        #map { height: 100%; }
+        #map { height: 625px; }
     </style>
 </head>
 
@@ -22,39 +22,40 @@
 <div class="grid-container">
     <div class="item1">
         <nav class="nav-bar">
-            <div class="nav-logo">
-                <h4>RateMyShawarma</h4>
-            </div>
-            <ul class="nav-links">
-                <!-- We set up the nav bar here. The Home page is linked to this file, search.php-->
-                <li><a href="search.php">Home</a></li>
-                <li><a href="westdale_results.php">Search Results</a></li>
-                <li><a href="add_restaurant.php">Submit Review</a></li> <!--The Submit review page is linied to add_restaurant.php-->
-                <li><a href="login.php">Login/Register</a></li> <!--The login page is linked to login.php-->
-            </ul>
+            <?php include 'navbar.inc' ?>
         </nav>
     </div>
 
     <div class="item2">
-        <fieldset>
-            <b>Basilique</b>
-            <p><br></p>
-            <img class="pie-score" src="media/4.7-rating.png">
-            <p>4.7 stars</p>
-            <p>Number of Reviews: 217</p>
-            <p>Address: 1554 Main St W, Hamilton, ON L8S 1E5</p>
-            <p><br></p>
-        </fieldset>
+        <?php $host = "localhost"; // Website IP address
+        $db = "ratemyshawarma";
+        $user = "root";
+        $password = "";
 
-        <p>Top Review: "Best AUTHENTIC shawarma in Hamilton!" (5 Stars)</p>
-        <p><br></p>
-        <p><b>Most popular item</b>: Lamb Shawarma Poutine</p>
+        try {
+            $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password); // Create connection
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>"; // Check for connection errors
+            die(); // Terminates connection if there is an error
+        }
+
+
+        $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password); // Create connection
+        $statement = $pdo->query("SELECT * FROM `restaurants`");
+        $rows = $statement->fetchall(PDO::FETCH_ASSOC);
+
+        foreach ($rows as $row){
+            echo $row['name'] . "<br>";
+            echo $row['rating'] . " stars" . "<br>";
+            echo "Website: " . $row['website'] . "<br><br>";
+        } ?>
+
     </div>
 
     <div class="item3">
         <div id="map"></div>
         <script>
-            const mymap = L.map('map').setView([43.2610, -79.9075], 18);
+            const mymap = L.map('map').setView([43.2610, -79.9075], 14);
 
             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -64,26 +65,30 @@
                 zoomOffset: -1,
                 accessToken: 'pk.eyJ1IjoiYWhtMTM4OCIsImEiOiJja3ZwNWJtbDAwcDI2Mm5xdmdjeWFnbnA5In0.U-FY7XjdPoITkJElfGJKgQ'
             }).addTo(mymap);
-            var marker = L.marker([43.2610, -79.9075]).addTo(mymap);
-            marker.bindPopup("Basilique Shawarma")
+
+            var rows = <?php $statement = $pdo->query("SELECT * FROM `restaurants`");
+                $rows = $statement->fetchall(PDO::FETCH_ASSOC);
+                echo json_encode($rows);
+                ?>;
+
+            for(i = 0; i < rows.length; i++){
+                var marker = L.marker([rows[i]['latitude'], rows[i]['longitude']]).addTo(mymap);
+                const popupContent = rows[i]['name'] + "<br>" + rows[i]['address'] + "<br>" + rows[i]['rating'] + ' stars' + "<br>" + rows[i]['website'];
+                marker.bindPopup(popupContent);
+            }
         </script>
+
+
     </div>
 
 
     <div class="item4">
         <footer>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact Us</a>
-            <a>RateMyShawarma © 2021</a>
+            <?php include 'f_items.inc' ?>
         </footer>
     </div>
 
 </div>
-
-
-
-
 
 </body>
 
