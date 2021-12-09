@@ -2,7 +2,7 @@
 
 $host = "localhost"; // Website IP address
 $user = "root";
-$password = "";
+$password = "password";
 $pdo = new PDO("mysql:host=$host", $user, $password); // Create connection
 
 $pdo->query("CREATE DATABASE ratemyshawarma3");
