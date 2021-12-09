@@ -121,6 +121,17 @@ nav a::before {
     position: relative;
 }
 
+input {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    border: 2px solid #A57548;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+}
 .submit-form label {
     display: block;
     margin-bottom: 5px;}
