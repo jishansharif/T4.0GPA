@@ -1,13 +1,13 @@
 <?php
-include "connect_db.inc";
 $name = $_GET['name'];
 $address = $_GET['address'];
 $rating = $_GET['rating'];
 $lat = $_GET['latitude'];
 $long = $_GET['longitude'];
 
-$sql = "INSERT INTO `restaurants` (`name`, `address`, `rating`, `latitude`, `longitude`,`rating`) 
-VALUES ('$name', '$address', '$rating', '$lat', '$long', 0)";
+include "connect_db.inc";
+$sql = "INSERT INTO `restaurants` (`name`, `address`, `latitude`, `longitude`,`rating`) 
+VALUES ('$name', '$address', '$lat', '$long', '$rating')";
 $pdo->exec($sql);
 echo "Success!"
 

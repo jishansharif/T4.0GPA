@@ -29,7 +29,7 @@
         </div>
         <div class="submit-form">
             <label for="rating">Rating</label>
-            <input type="number" placeholder="Rating (Out of 5)" id="rating"
+            <input type="number" placeholder="Rating (Out of 5)" id="rating" name="rating"
                    min="0" max="5" required>  <!-- Ensures input is a number (0-5) -->
         </div>
         <div class="submit-form">
